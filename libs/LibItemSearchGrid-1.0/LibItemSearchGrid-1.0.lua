@@ -518,8 +518,8 @@ elseif IsAddOnLoaded('Wardrobe') then
 --Last Resort: Blizzard Equipment Manager
 else
 	function ES_FindSets(setList, search, exactMatch)
-		for i = 1, GetNumEquipmentSets() do
-			local setName = GetEquipmentSetInfo(i)
+		for i = 0, C_EquipmentSet.GetNumEquipmentSets() - 1 do
+			local setName = C_EquipmentSet.GetEquipmentSetInfo(i)
 			if ES_TrySetName(setName, search, exactMatch) then
 				table.insert(setList, setName)
 			end
